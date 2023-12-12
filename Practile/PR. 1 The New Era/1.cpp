@@ -4,7 +4,7 @@ using namespace std;
 class Distances
 {
 public:
-    int feet, intch, cal;
+    int feet, intch;
 };
 
 int main()
@@ -23,5 +23,15 @@ int main()
     cin >> d2.intch;
 
     // Logic
-    d1.intch = (d1.feet * 12) + (d1.intch);
+
+    int Tfeet = d1.feet + d2.feet;
+    int Tintch = d1.intch + d2.intch;
+
+    if (Tfeet >= 12)
+    {
+        Tintch -= 12;
+        Tfeet++;
+    }
+
+    cout << "Total Length : " << Tfeet << " Feet " << Tintch << "Intch";
 }
