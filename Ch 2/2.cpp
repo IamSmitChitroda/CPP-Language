@@ -13,22 +13,24 @@ public:
 
     void SetCarData() // Function to take input of employee details
     {
-        cout << "Enter Car ID: ";
-        cin >> car_id;
+        cout << endl
+             << "Enter Car ID: ";
+        cin  >> car_id;
         fflush(stdin); //To clean memory
         cout << "Enter Car Company Name: ";
-        cin >> car_company_name;
+        cin  >> car_company_name;
         cout << "Enter Car Color: ";
-        cin >> car_color;
+        cin  >> car_color;
         cout << "Enter Car Model: ";
-        cin >> car_model;
+        cin  >> car_model;
         cout << "Enter Car Release Year: ";
-        cin >> car_release_year;
+        cin  >> car_release_year;
     }
 
     void GetCarData() // Function to display employee details
     {
-        cout << "Car ID: "           << car_id              << endl;
+        cout << endl
+             << "Car ID: "           << car_id              << endl;
         cout << "Car Company Name: " << car_company_name    << endl;
         cout << "Car Color: "        << car_color           << endl;
         cout << "Car Model: "        << car_model           << endl;
