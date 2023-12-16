@@ -14,14 +14,10 @@ private:
 public:
     void Setter()
     {
-        cout << "Enter Train number : ";
-        cin >> this->Train_number;
-        fflush(stdin);
-        cout << "Enter Train name : ";
-        gets(this->Train_Name);
-        cout << "Enter train Source : ";
+        cout << "----:Enter data:----" << endl
+             << "Enter train Source : ";
         gets(this->Source);
-        cout << "Enter train Destination";
+        cout << "Enter train Destination : ";
         gets(this->Destination);
         cout << "Enter train time : ";
         gets(this->train_time);
@@ -29,13 +25,15 @@ public:
 
     void Display_Records()
     {
+        cout << "Train according your time" << endl;
     lable:
-        cout << "\tNo\tTrain" << endl
-             << "\t--\t-----" << endl
-             << "\t1.\tRajdhani Express" << endl
-             << "\t2.\tVande Bharat" << endl
-             << "\t3.\tDuronto Express" << endl
-             << "Enter your choice." << endl;
+        cout << endl
+             << "No\tTrain" << endl
+             << "--\t-----" << endl
+             << "1.\tRajdhani Express" << endl
+             << "2.\tVande Bharat" << endl
+             << "3.\tDuronto Express" << endl
+             << "Enter your choice.";
         cin >> this->choice;
 
         switch (this->choice)
