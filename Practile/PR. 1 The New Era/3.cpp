@@ -1,28 +1,24 @@
 #include <iostream>
 using namespace std;
-#include <string>
 
-class Data
+class Class
 {
+private:
+    string surname;
+
 public:
     string name;
-    int age;
 };
 
 int main()
 {
+    Class a1;
 
-    Data person;
-
-    person.name = "Person 1";
-    person.age = 25;
-
-    cout << "Name: " << person.name << ", Age: " << person.age << endl;
-
-    person.name = "Person 2";
-    person.age = 30;
-
-    cout << "Updated Name: " << person.name << " , Updated Age: " << person.age << endl;
-
-    return 0;
+    cout << "Enter name: ";
+    cin >> a1.name;
+    /*
+        Here,
+            -> Name is public Attributs.
+            -> So, When we write obj(a1) . than suggestion only for name, not surnaem.
+    */
 }
