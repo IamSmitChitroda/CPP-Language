@@ -2,9 +2,8 @@
 #include <string.h>
 using namespace std;
 
-class time
+class TimeCalculate 
 {
-
 public:
 	int hour;
 	int minute;
@@ -14,11 +13,12 @@ public:
 
 int main()
 {
-	time t1;
+	TimeCalculate t1;
 
 	cout << "Enter second :";
 	cin >> t1.number;
 
+	// Logic
 	t1.hour = t1.number / 3600;
 	t1.minute = (t1.number % 3600) / 60;
 	t1.second = t1.number % 60;
