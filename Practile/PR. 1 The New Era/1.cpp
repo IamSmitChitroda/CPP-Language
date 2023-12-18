@@ -4,34 +4,36 @@ using namespace std;
 class Distances
 {
 public:
-    int feet, intch;
+    int feet, inch;
 };
 
 int main()
 {
-    Distances d1;
-    Distances d2;
+    Distances d1, d2;
 
-    cout << "input1 => \nfeet : ";
+    cout << "Input 1 =>\nFeet: ";
     cin >> d1.feet;
-    cout << ", Intch : ";
-    cin >> d1.intch;
-    cout << endl
-         << "input2 => \nfeet : ";
+    cout << "Inch: ";
+    cin >> d1.inch;
+
+    cout << "\nInput 2 =>\nFeet: ";
     cin >> d2.feet;
-    cout << ", Intch : ";
-    cin >> d2.intch;
+    cout << "Inch: ";
+    cin >> d2.inch;
 
     // Logic
 
-    int Tfeet = d1.feet + d2.feet;
-    int Tintch = d1.intch + d2.intch;
+    int totalFeet = d1.feet + d2.feet;
+    int totalInch = d1.inch + d2.inch;
 
-    if (Tfeet >= 12)
+    while (totalInch >= 12)
     {
-        Tintch -= 12;
-        Tfeet++;
+        totalInch -= 12;
+        totalFeet++;
     }
 
-    cout << "Total Length : " << Tfeet << " Feet " << Tintch << "Intch";
+    cout << endl
+         << "Total Length: " << totalFeet << " feet " << totalInch << " inch\n";
+
+    return 0;
 }
