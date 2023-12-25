@@ -1,5 +1,5 @@
 #include <iostream>
-#
+#include <strin.h>
 using namespace std;
 class Railway
 {
