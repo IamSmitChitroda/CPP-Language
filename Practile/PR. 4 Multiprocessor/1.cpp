@@ -1,14 +1,4 @@
-// #inclide <iostream>
-
-// class
-
-// int main()
-// {
-
-//     return 0;
-// }
 #include <iostream>
-// #include <strin.h>
 using namespace std;
 
 class Message
