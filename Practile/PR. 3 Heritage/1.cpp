@@ -30,7 +30,7 @@ class Rectangle : public Shape
 public:
     void Area_of_Rectangle()
     {
-        cout << "Area of Triangle : " << width * height << endl;
+        cout << "Area of Rectangle : " << width * height << endl;
     }
 };
 
