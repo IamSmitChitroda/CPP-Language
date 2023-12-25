@@ -1,30 +1,21 @@
 #include <iostream>
 using namespace std;
 
-calss A
+class Number
 {
+public:
     int n;
 
-public:
     void setData()
     {
-        cout << "Enter any value : ";
-        cin >> this->n;
+        cout << "Enter Number : ";
+        cin >> n;
     }
-
-    void getData()
+    bool operator<(Number n2)
     {
-        cout << endl
-             << "A : " << this->n;
-    }
-
-    bool operator<(A o2)
-    {
-        if (this->n < o2.n)
-        {
+        if (n < n2.n) {
             return true;
         } else {
-
             return false;
         }
     }
@@ -32,17 +23,13 @@ public:
 
 int main()
 {
-    A o1, o2;
+    Number n1, n2;
+    n1.setData();
+    n2.setData();
 
-    o1.setData();
-    o2.setData();
-
-    o1.getData();
-    o2.getData();
-
-    (o1 < o2)
-        ? cout << "O2 is big !!!"
-        : cout << "O1 is big !!!";
+    n1 < n2
+        ? cout << " N2 has Maxium value !!!"
+        : cout << " N1 has Maximum value !!!";
 
     return 0;
 }
