@@ -1,37 +1,55 @@
+// #inclide <iostream>
+
+// class
+
+// int main()
+// {
+
+//     return 0;
+// }
 #include <iostream>
-#include <string.h>
+// #include <strin.h>
 using namespace std;
 
 class Message
 {
-protected:
-    string Str2 = "NULL", merge_string;
+private:
+    string first_name = "NULL";
+    string Full_Name;
 
 public:
-    Message(string Str1)
+    Message(string name) // Create consructor beacuse when we create object then auto called
     {
-        cout << endl
-             << "Enter second string : ";
-        cin >> Str2;
-
-        strcat(Str1, this->Str2);
-        strcpy(this->merge_string, Str1);
+        this->first_name = name; // To assigment value in attribut os class Message
     }
 
-    void string_display()
+    void Print() // Display name
     {
-        cout << endl
-             << "Merge string : " << this->merge_string;
+        cout << this->first_name << endl;
+    }
+
+    // Logic
+    void Print(string sec)
+    {
+        this->Full_Name = this->first_name + " " + sec; // To add space between name and surname
+        cout << this->Full_Name;
     }
 };
 
 int main()
 {
-    string Str;
+    string name, surname;
+    cout << "Enter first name : ";
+    cin >> name;
 
-    cout << "Enter first string : ";
-    cin >> Str;
-    Message obj(Str);
+    Message obj(name);
 
-    obj.string_display();
+    obj.Print();
+
+    cout << "Enter your surname : ";
+    cin >> surname;
+
+    obj.Print(surname);
+
+    return 0;
 }
