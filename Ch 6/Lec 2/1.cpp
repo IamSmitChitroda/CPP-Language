@@ -1,51 +1,112 @@
 #include <iostream>
+#define PI 3.14;
 using namespace std;
 
-class Abstract_class
+double getDouble();
+
+class MathematicalTask
 {
 protected:
-    // Pure virtual function
-    virtual void Area(double width, double length) = 0;
+    double Base, Height, radius;
 
 public:
+    virtual void calculate() = 0;
 };
 
-class Circle : public Abstract_class
+class Circle : public MathematicalTask
 {
-
-    double row, area;
+private:
+    double r;
 
 public:
-    void Area(double r)
+    Circle()
     {
-        area = (r * r) * (22 / 7);
-        cout << "Area of Circle : " << area;
+        cout << endl
+             << "Enter Circle Radius : ";
+        radius = getDouble();
+
+        void calculate();
     }
 
-    Circle() // Setter
+    void calculate()
     {
-        // cout << "Enter width : ";
-        // cin >> this->width;
-        // cout << "Enter length : ";
-        // cin >> this->length;
-
-        cout << "Enter row : ";
-        cin >> this->row;
-        Area(row);
+        cout << endl
+             << endl
+             << "Radius of Circle is : " << (radius * radius) * PI;
     }
 };
 
-// class triangle : public Abstract_class
-// {
-// };
+class Triangle : public MathematicalTask
+{
+private:
+    double h, b;
 
-// class Rectangle : public Abstract_class
-// {
-// };
+public:
+    Triangle()
+    {
+        cout << endl
+             << endl
+             << "Enter Triangle Height : ";
+        Height = getDouble();
+
+        cout << "Enter Triangle Base  : ";
+        Base = getDouble();
+
+        void calculate();
+    }
+
+    void calculate()
+    {
+        cout << endl
+             << endl
+             << "Area of Triangle is : " << Base * Height * 0.5;
+    }
+};
+
+class Ractangle : public MathematicalTask
+{
+private:
+    double h, b;
+
+public:
+    Ractangle()
+    {
+        cout << endl
+             << endl
+             << "Enter Ractangle Height : ";
+        Height = getDouble();
+
+        cout << "Enter Ractangle Base Length : ";
+        Base = getDouble();
+
+        void calculate();
+    }
+
+    void calculate()
+    {
+        cout << endl
+             << endl
+             << "Area of Ractangle is : " << Height * Base;
+    }
+};
 
 int main()
 {
-    Circle o1;
-    // o1.setData();
+    Circle c;
+    c.calculate();
+
+    Triangle t;
+    t.calculate();
+
+    Ractangle r;
+    r.calculate();
+
     return 0;
+}
+
+double getDouble()
+{
+    double n;
+    cin >> n;
+    return n;
 }
