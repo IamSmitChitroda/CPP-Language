@@ -1,19 +1,17 @@
 #include <iostream>
-#define PI 3.14;
 using namespace std;
 
-double getDouble();
-
-class MathematicalTask
+class Abstract_function
 {
 protected:
-    double Base, Height, radius;
+    double B, H, R;
 
 public:
+    // pure virtual function
     virtual void calculate() = 0;
 };
 
-class Circle : public MathematicalTask
+class Circle : public Abstract_function
 {
 private:
     double r;
@@ -23,20 +21,18 @@ public:
     {
         cout << endl
              << "Enter Circle Radius : ";
-        radius = getDouble();
+        cin >> R;
 
         void calculate();
     }
 
     void calculate()
     {
-        cout << endl
-             << endl
-             << "Radius of Circle is : " << (radius * radius) * PI;
+        cout << "Radius of Circle is : " << (R * R) * (22 / 7);
     }
 };
 
-class Triangle : public MathematicalTask
+class Triangle : public Abstract_function
 {
 private:
     double h, b;
@@ -44,26 +40,22 @@ private:
 public:
     Triangle()
     {
-        cout << endl
-             << endl
-             << "Enter Triangle Height : ";
-        Height = getDouble();
+        cout << "Enter Triangle Height : ";
+        cin >> H;
 
         cout << "Enter Triangle Base  : ";
-        Base = getDouble();
+        cin >> B;
 
         void calculate();
     }
 
     void calculate()
     {
-        cout << endl
-             << endl
-             << "Area of Triangle is : " << Base * Height * 0.5;
+        cout << "Area of Triangle is : " << B * H * (1 / 2);
     }
 };
 
-class Ractangle : public MathematicalTask
+class Ractangle : public Abstract_function
 {
 private:
     double h, b;
@@ -74,19 +66,17 @@ public:
         cout << endl
              << endl
              << "Enter Ractangle Height : ";
-        Height = getDouble();
+        cin >> H;
 
         cout << "Enter Ractangle Base Length : ";
-        Base = getDouble();
+        cin >> b;
 
         void calculate();
     }
 
     void calculate()
     {
-        cout << endl
-             << endl
-             << "Area of Ractangle is : " << Height * Base;
+        cout << "Area of Ractangle is : " << H * B;
     }
 };
 
@@ -102,11 +92,4 @@ int main()
     r.calculate();
 
     return 0;
-}
-
-double getDouble()
-{
-    double n;
-    cin >> n;
-    return n;
 }
